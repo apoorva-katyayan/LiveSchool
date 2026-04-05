@@ -1,0 +1,146 @@
+.mac-window {
+  background: var(--window-bg);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 80px rgba(99, 102, 241, 0.12);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.mac-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+  z-index: 1;
+}
+
+.mac-window:hover {
+  box-shadow: 
+    0 16px 56px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 100px rgba(99, 102, 241, 0.2);
+  transform: translateY(-4px);
+}
+
+.window-chrome {
+  height: 50px;
+  background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0.12) 0%, 
+    rgba(255, 255, 255, 0.06) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  position: relative;
+  z-index: 2;
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+}
+
+.traffic-light {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  opacity: 0.8;
+}
+
+.traffic-light::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.traffic-light:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.traffic-light:hover::before {
+  opacity: 1;
+}
+
+.traffic-light.red {
+  background: linear-gradient(135deg, #ff5f57, #ff4141);
+  box-shadow: 0 4px 8px rgba(255, 95, 87, 0.3);
+}
+
+.traffic-light.yellow {
+  background: linear-gradient(135deg, #ffbd2e, #ffb300);
+  box-shadow: 0 4px 8px rgba(255, 189, 46, 0.3);
+}
+
+.traffic-light.green {
+  background: linear-gradient(135deg, #28ca42, #00c542);
+  box-shadow: 0 4px 8px rgba(40, 202, 66, 0.3);
+}
+
+.window-title {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.window-content {
+  padding: 32px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  position: relative;
+  background: 
+    linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.03) 0%, 
+      transparent 100%);
+}
+
+.window-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.window-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.window-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
