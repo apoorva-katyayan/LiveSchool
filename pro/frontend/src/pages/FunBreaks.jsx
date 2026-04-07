@@ -147,7 +147,7 @@ export default function FunBreaks({ toggleTheme, theme }) {
             <div className="sounds-section">
               <h2>Ambient Sounds</h2>
               <p className="section-description">
-                Create a peaceful environment with ambient background sounds.
+                Peaceful environment with ambient background sounds.
               </p>
               <div className="sounds-grid">
                 <button
@@ -175,9 +175,7 @@ export default function FunBreaks({ toggleTheme, theme }) {
                   {sounds.forest && <span className="sound-indicator">●</span>}
                 </button>
               </div>
-              <p className="sounds-note">
-                Note: This is a UI demo. In a production app, you would integrate actual audio playback.
-              </p>
+              
             </div>
           )}
         </div>
