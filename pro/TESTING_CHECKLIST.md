@@ -4,7 +4,7 @@
 
 - [ ] Backend server running on port 3001 or higher
 - [ ] Frontend dev server running on port 3001
-- [ ] Admin user account created (apoorvakatyayan1234@gmail.com / Apoorva@4321)
+- [ ] Admin user account created (set `ADMIN_EMAIL` & `ADMIN_PASSWORD` in `pro/backend/.env` or run `node backend/create-admin.js <email> <password>`)
 - [ ] Browser DevTools open for console checking
 - [ ] Clear browser cache/localStorage for fresh start
 

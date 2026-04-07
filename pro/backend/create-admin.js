@@ -10,8 +10,15 @@ const __dirname = dirname(__filename);
 
 dotenv.config({ path: join(__dirname, '.env') });
 
-const email = 'apoorvakatyayan1234@gmail.com';
-const password = 'Apoorva@4321';
+// Read admin credentials from environment variables or CLI arguments.
+// This avoids keeping secrets in source control.
+const email = process.env.ADMIN_EMAIL || process.argv[2];
+const password = process.env.ADMIN_PASSWORD || process.argv[3];
+
+if (!email || !password) {
+  console.error('Usage: set ADMIN_EMAIL and ADMIN_PASSWORD in environment or run: node create-admin.js <email> <password>');
+  process.exit(1);
+}
 
 async function createAdmin() {
   const client = new MongoClient(process.env.MONGODB_URI);
@@ -56,10 +63,10 @@ async function createAdmin() {
       console.log(`   User ID: ${result.insertedId}`);
     }
     
-    console.log('\n📝 Login credentials:');
-    console.log(`   Email: ${email}`);
-    console.log(`   Password: ${password}`);
-    console.log('\n✨ You can now log in and access the admin panel!');
+  console.log('\n📝 Login info:');
+  console.log(`   Email: ${email}`);
+  console.log('   (Password set from environment / CLI — not displayed for security)');
+  console.log('\n✨ You can now log in and access the admin panel!');
     
   } catch (error) {
     console.error('❌ Error:', error.message);

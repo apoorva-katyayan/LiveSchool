@@ -159,8 +159,9 @@ cd /Users/apoorvakatyayan/Documents/pro/frontend && npm run dev
 
 ### 2. Login as Admin
 ```
-Email: apoorvakatyayan1234@gmail.com
-Password: Apoorva@4321
+Set your admin credentials via `pro/backend/.env` (see `.env.example`) or create an admin with:
+  cd pro/backend
+  node create-admin.js <email> <password>
 ```
 
 ### 3. Delete a Course

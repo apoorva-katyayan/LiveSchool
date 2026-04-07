@@ -20,8 +20,9 @@ Admins can now delete courses directly from the Admin Panel. When a course is de
 
 ### Step 1: Login as Admin
 ```
-Email: apoorvakatyayan1234@gmail.com
-Password: Apoorva@4321
+Configure `ADMIN_EMAIL` and `ADMIN_PASSWORD` in `pro/backend/.env` (copy from `.env.example`) or run:
+  cd pro/backend
+  node create-admin.js <email> <password>
 ```
 
 ### Step 2: Navigate to Admin Panel

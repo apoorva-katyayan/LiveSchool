@@ -285,7 +285,7 @@ npm run dev
 ```
 
 ### Test Logout
-1. Login with: `apoorvakatyayan1234@gmail.com` / `Apoorva@4321`
+1. Login with an admin account (email configured via environment or created with `pro/backend/create-admin.js`). Do NOT store plaintext passwords in the repo.
 2. Look for Dock at bottom center
 3. Click 🚪 door icon on the right
 4. You'll be logged out and redirected to login
